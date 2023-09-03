@@ -73,6 +73,13 @@
                                     </form>
                                 </div>
 
+                                <div class="col-md-4 my-2">
+                                    <a href="{{route('twocheckout.payment')}}" type="submit" class="btn btn-outline-dark flex-shrink-0" type="button">
+                                        <i class="bi-cart-fill me-1"></i>
+                                        Buy With 2CO
+                                    </a>
+                                </div>
+
                             </div>
 
                     </div>
