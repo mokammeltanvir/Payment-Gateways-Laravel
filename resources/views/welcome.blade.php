@@ -36,12 +36,12 @@
 
                             <div class="row">
                                 <div class="col-md-4 my-2">
-                                    <form action="#" method="POST">
+                                    <form action="{{ route('paypal.payment')}}" method="POST">
                                         @csrf
                                         <input type="hidden" value="40" name="price">
                                         <button type="submit" class="btn btn-outline-dark flex-shrink-0" type="button">
                                             <i class="bi-cart-fill me-1"></i>
-                                            Buy Now
+                                            Buy Now with Paypal
                                         </button>
                                     </form>
                                 </div>
