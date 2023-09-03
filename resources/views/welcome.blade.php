@@ -56,6 +56,23 @@
                                     </form>
                                 </div>
 
+                                <div class="col-md-4 my-2">
+                                    <form action="{{route('razorpay.payment')}}" method="POST">
+                                        @csrf
+                                        <i class="bi-cart-fill me-1"></i>
+                                        <script src="https://checkout.razorpay.com/v1/checkout.js"
+                                                data-key="{{config('razorpay.key')}}"
+                                                data-amount="{{ 40 * 100}}"
+                                                data-buttontext="Pay With Razorpay"
+                                                data-name="test payment"
+                                                data-description="Payment"
+                                                data-prefill.name="user"
+                                                data-prefill.email="user@gmail.com"
+                                                data-theme.className="btn btn-outline-dark flex-shrink-0">
+                                        </script>
+                                    </form>
+                                </div>
+
                             </div>
 
                     </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
+use App\Http\Controllers\Gateways\RazorpayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('paypal/cancel', [PaypalController::class, 'cancel'])->name('paypal.c
 Route::post('stripe/payment', [StripeController::class, 'payment'])->name('stripe.payment');
 Route::get('stripe/success', [StripeController::class, 'success'])->name('stripe.success');
 Route::get('stripe/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
+
+// Razorpay Routes
+Route::post('razorpay/payment', [RazorpayController::class, 'payment'])->name('razorpay.payment');
