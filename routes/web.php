@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Gateways\MollieController;
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
 use App\Http\Controllers\Gateways\RazorpayController;
@@ -43,3 +44,7 @@ Route::get('twocheckout/success', [TwoCheckoutController::class, 'success'])->na
 // Instamojo Routes
 Route::post('instamojo/payment', [InstamojoController::class, 'payment'])->name('instamojo.payment');
 Route::get('instamojo/callback', [InstamojoController::class, 'callback'])->name('instamojo.callback');
+
+// Mollie Routes
+Route::post('mollie/payment', [MollieController::class, 'payment'])->name('mollie.payment');
+Route::get('mollie/success', [MollieController::class, 'success'])->name('mollie.success');
