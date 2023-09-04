@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
 use App\Http\Controllers\Gateways\RazorpayController;
+use App\Http\Controllers\Gateways\InstamojoController;
 use App\Http\Controllers\Gateways\TwoCheckoutController;
 
 /*
@@ -38,3 +39,7 @@ Route::get('twocheckout/payment',[TwoCheckoutController::class, 'showFrom'])->na
 Route::post('twocheckout/handle-payment',[TwoCheckoutController::class, 'handlePayment'])->name('twocheckout.handle-payment');
 Route::get('twocheckout/success', [TwoCheckoutController::class, 'success'])->name('twocheckout.success');
 // Route::get('twocheckout/cancel', [TwoCheckoutController::class, 'cancel'])->name('twocheckout.cancel');
+
+// Instamojo Routes
+Route::post('instamojo/payment', [InstamojoController::class, 'payment'])->name('instamojo.payment');
+Route::get('instamojo/callback', [InstamojoController::class, 'callback'])->name('instamojo.callback');
