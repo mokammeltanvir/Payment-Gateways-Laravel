@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Gateways\MollieController;
 use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
+use App\Http\Controllers\Gateways\PaystackController;
 use App\Http\Controllers\Gateways\RazorpayController;
 use App\Http\Controllers\Gateways\InstamojoController;
 use App\Http\Controllers\Gateways\TwoCheckoutController;
@@ -48,3 +49,7 @@ Route::get('instamojo/callback', [InstamojoController::class, 'callback'])->name
 // Mollie Routes
 Route::post('mollie/payment', [MollieController::class, 'payment'])->name('mollie.payment');
 Route::get('mollie/success', [MollieController::class, 'success'])->name('mollie.success');
+
+// Paystack Routes
+Route::get('paystack/redirect', [PaystackController::class, 'paystackRedirect'])->name('paystack.redirect');
+Route::get('paystack/callback', [PaystackController::class, 'verifyTransaction'])->name('paystack.callback');
