@@ -6,6 +6,7 @@ use App\Http\Controllers\Gateways\PaypalController;
 use App\Http\Controllers\Gateways\StripeController;
 use App\Http\Controllers\Gateways\PaystackController;
 use App\Http\Controllers\Gateways\RazorpayController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Gateways\InstamojoController;
 use App\Http\Controllers\Gateways\TwoCheckoutController;
 
@@ -53,3 +54,13 @@ Route::get('mollie/success', [MollieController::class, 'success'])->name('mollie
 // Paystack Routes
 Route::get('paystack/redirect', [PaystackController::class, 'paystackRedirect'])->name('paystack.redirect');
 Route::get('paystack/callback', [PaystackController::class, 'verifyTransaction'])->name('paystack.callback');
+
+// SSLCOMMERZ Start
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('sslcommerz.pay');
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+//SSLCOMMERZ END

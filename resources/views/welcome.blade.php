@@ -110,6 +110,16 @@
                                     </a>
                                 </div>
 
+                                <div class="col-md-6 my-2">
+                                    <form action="{{route('sslcommerz.pay')}}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-dark flex-shrink-0" >
+                                            <i class="bi-cart-fill me-1"></i>
+                                            Buy With Ssscommerz
+                                        </button>
+                                    </form>
+                                </div>
+
 
                             </div>
 
